@@ -70,5 +70,15 @@ tutorials:
     children:
       - title: "Training a model on CIFAR-10 Using KAMONOHASHI"
         url: /tutorial/cifar10
+faq:
+  - title: faq
+    url: /docs/faq
+    children:
+      - title: "一般的な質問"
+        url: /docs/faq#一般的な質問
+      - title: "インストールについて"
+        url: /docs/faq#インストールについて
+      - title: "KAMONOHASHIチームへの連絡"
+        url: /docs/faq#KAMONOHASHIチームへの連絡
 
 

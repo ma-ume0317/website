@@ -33,19 +33,13 @@ feature_row3:
     excerpt: "AI開発者向け、システム管理者向けの詳細なマニュアルです。"
     url: "/docs/how-to"
 ---
+## 本ドキュメントの構成
+ - <a href="/docs/tutorial">Tutorial</a>ではKAMONOHASHIを使用したAI開発プロセスを10分で学べます。
+ - <a href="/docs/how-to">How-to Guides</a>はAI開発者・システム管理者向けの詳細なマニュアルです。
 
-## <a href="/docs/concepts">Concepts</a>
-KAMONOHASHIを使用する上で必要な独自の概念やキーワードを説明します。
+## 最初のステップ
+ -  <a href="/docs/concepts">Concepts</a>ではKAMONOHASHIを使用する上で必要な独自の概念やキーワードを説明しています。
+ - <a href="/docs/install-and-update">Installation</a>ではKAMONOHASHIのインストール方法について説明しています。
 
-## <a href="/docs/install-and-update">Installation</a>
-KAMONOHASHIのインストール方法について説明します。<br>
-**<font color="#094952">初めての方はまずこちらからご覧ください。</font>**
-
-## <a href="/docs/tutorial">Tutorial</a>
-KAMONOHASHIを使用したAI開発プロセスを10分で学びます。
-
-## <a href="/docs/how-to">How-to Guides</a>
-AI開発者・システム管理者向けの詳細なマニュアルです。
-
-## <a href="/docs/supported-doc-versions">Supported doc versions</a>
-以前のバージョンの KAMONOHASHI ドキュメントはこちらからご覧ください。
+## 質問がある場合
+ -  <a href="/docs/faq">FAQ</a>ではよくある質問とそれに対する答えが読めます。
