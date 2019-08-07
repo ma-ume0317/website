@@ -352,6 +352,14 @@
             
             
 
+            <li><a href="/docs/how-to/user#notebook" class="">・Jupyter notebook</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="/docs/how-to/admin/" class="">Admin Guide</a></li>
           
             
@@ -1248,6 +1256,139 @@ Tensorbardの項目からTensorboadが起動できます。
   <li>コンテナ名は”inference-推論名-推論ID”となります。</li>
   <li>Tensorboardの起動は出来ません。</li>
 </ul>
+
+<p><a name="notebook"></a></p>
+<h2 id="jupyter-notebook">Jupyter notebook</h2>
+<h3 id="ノートブック機能の概要">ノートブック機能の概要</h3>
+<p>Jupter notebookを作成し、KAMONOHASHI上で試すことができます。
+Jupyter Labを起動することで、モデル定義コードの開発やデバッグをしたり、トレーニング済みモデルの結果を視覚化したりすることができます。</p>
+
+<h3 id="ノートブックの作成">ノートブックの作成</h3>
+<p>ノートブックの起動は[notebook]画面の右上にある[ノートブック作成]ボタンより可能です。
+学習の新規実行時と同様にステップごとに下記の必要事項を記入します。</p>
+
+<p><img src="/assets/images/notebook-index.PNG" alt="ノートブック一覧画面" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>種類</th>
+      <th>要否</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ノートブック名</td>
+      <td>必須</td>
+      <td>ノートブックの名前。<br />半角英数小文字、または記号(“-”（ハイフン）) 30 文字以下で指定可能。</td>
+    </tr>
+    <tr>
+      <td>CPU</td>
+      <td>必須</td>
+      <td>ノートブックで利用するCPUコア数を指定する。</td>
+    </tr>
+    <tr>
+      <td>メモリ</td>
+      <td>必須</td>
+      <td>ノートブックで利用するメモリ量(GB)を指定する。</td>
+    </tr>
+    <tr>
+      <td>GPU</td>
+      <td>必須</td>
+      <td>ノートブックで利用するGPU枚数を指定する。</td>
+    </tr>
+    <tr>
+      <td>コンテナイメージ</td>
+      <td>任意</td>
+      <td>利用するDockerレジストリ、コンテナ、タグを指定する。</td>
+    </tr>
+    <tr>
+      <td>モデル</td>
+      <td>任意</td>
+      <td>ノートブックで利用するソースコードを格納しているGitサーバ、リポジトリ、ブランチ、コミットIDを指定する。コミットIDを指定した場合はブランチの入力値は無視される。コミットIDが未指定の場合はブランチのHEADが選択される。ブランチもコミットIDも未指定の場合は、masterブランチのHEADが選択される。</td>
+    </tr>
+    <tr>
+      <td>データセット</td>
+      <td>任意</td>
+      <td>ノートブックで利用するデータセットを指定する。</td>
+    </tr>
+    <tr>
+      <td>環境変数</td>
+      <td>任意</td>
+      <td>環境変数を指定する。環境変数はコンテナ内の環境変数へ追加設定される。</td>
+    </tr>
+    <tr>
+      <td>パーティション</td>
+      <td>任意</td>
+      <td>KAMONOHASHI に設定されているパーティションを設定する。例えばGPUの型番などはここから指定する。</td>
+    </tr>
+    <tr>
+      <td>メモ</td>
+      <td>任意</td>
+      <td>ノートブック履歴に付与する任意のメモ。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>コンテナイメージを指定しない場合にはデフォルトで下記のイメージが指定されます。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>コンテナイメージ　</th>
+      <th>　</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>イメージ</td>
+      <td>tensorflow/tensorflow</td>
+    </tr>
+    <tr>
+      <td>タグ</td>
+      <td>1.13.2-py3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ノートブック作成に成功すると一覧画面に作成したノートブックが表示されます。</p>
+
+<p>ノートブック作成直後はステータスが“Pending” となっています。
+ステータスが “Running” に変わればノートブックへアクセス可能になります。</p>
+
+<p><img src="/assets/images/notebook-running.png" alt="ノートブック作成画面" /></p>
+
+<h3 id="ノートブックへのアクセス">ノートブックへのアクセス</h3>
+<p>ノートブック一覧画面から開きたいノートブックの行内の“ノートブックを開く” ボタンからノートブックへアクセスすることが可能です。</p>
+
+<p><img src="/assets/images/notebook-running.png" alt="ノートブック作成画面" /></p>
+
+<p>JupyterLabのページに遷移します。</p>
+
+<p><img src="/assets/images/jupyterLab.png" alt="ノートブックアクセス画面" /></p>
+
+<h3 id="ノートブックの停止">ノートブックの停止</h3>
+<p>停止したいノートブックの行を選択し、ノートブック詳細画面から “停止” ボタンを押下します。</p>
+
+<p><img src="/assets/images/notebook-halt.png" alt="ノートブック停止画面" /></p>
+
+<p>停止に成功するとステータスが “Killed” に変わります。</p>
+
+<p>ノートブックは一定時間使用されていない場合には自動的に停止されます。</p>
+
+<h3 id="ノートブックの再実行">ノートブックの再実行</h3>
+<p>停止したノートブックは再実行することができます。
+再実行したいノートブックの行内の “再実行” ボタンを押下します。
+<img src="/assets/images/notebook-rerun.png" alt="ノートブック再実行画面" />
+必要なリソース量を指定できるようになっているので、入力した後「再実行」を押下します。</p>
+
+<p><img src="/assets/images/notebook-rerun-resource.png" alt="ノートブック再実行画面" /></p>
+
+<h3 id="ノートブックの削除">ノートブックの削除</h3>
+<p>停止したいノートブックの行を選択し、ノートブック詳細画面から 左下のごみ箱ボタンを押下します。
+<img src="/assets/images/notebook-halt.png" alt="ノートブック削除画面" />
+削除に成功すると一覧からノートブックが表示されなくなります。</p>
 
         
       </section>

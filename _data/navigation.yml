@@ -48,6 +48,8 @@ docs:
         url: /docs/how-to/user#学習管理
       - title: "・推論管理"
         url: /docs/how-to/user#推論管理
+      - title: "・Jupyter notebook"
+        url: /docs/how-to/user#notebook
       - title: "Admin Guide"
         url: /docs/how-to/admin/
       - title: "・事前準備"
